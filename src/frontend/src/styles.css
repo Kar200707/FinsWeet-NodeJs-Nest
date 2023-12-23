@@ -1,0 +1,58 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import "assets/Fonts/Inter/Inter.css";
+@import "assets/Fonts/Sen/sen.css";
+@import "app/styles/button.css";
+@import "src/app/styles/media.css";
+
+body {
+  overflow-x: hidden;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #232536;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(173, 173, 173);
+  border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(138, 138, 138);
+}
+
+.container {
+  width: 1280px;
+  margin: auto;
+}
+
+::-moz-selection {
+  color: #00ff6f;
+  background: #545454;
+}
+
+::selection {
+  color: #00ff6f;
+  background: #545454;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-zoom: fixed;
+  -webkit-user-drag: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

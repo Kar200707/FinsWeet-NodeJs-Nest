@@ -1,0 +1,68 @@
+<header>
+  <div
+    [style.-webkit-backdrop-filter]="navBarScrollPosition && innerWidth > 850 ? 'blur(10px)' : '0'"
+    [style.backdrop-filter]="navBarScrollPosition && innerWidth > 850 ? 'blur(10px)' : '0'"
+    [style.background-color]="navBarScrollPosition ? 'rgba(35, 37, 54, 0.69)' : 'rgba(35, 37, 54, 1)'"
+    [style.position]="navBarScrollPosition ? 'fixed' : 'absolute'"
+    [class]="navBarScrollPosition ? 'header_block header-anim' : 'header_block'">
+    <div class="header_container">
+      <img routerLink="" class="header_logo" src="assets/Images/logos/logo.png" alt="this is header logo">
+      <nav>
+        <div class="nav_block">
+          <a [routerLinkActiveOptions]="{exact: true}" routerLink="" routerLinkActive="router-active" class="nav_links">Home</a>
+          <a routerLink="blog" routerLinkActive="router-active" style="margin-left: 24px;" class="nav_links">Blog</a>
+          <a routerLink="about-us" routerLinkActive="router-active" style="margin-left: 24px;" class="nav_links">About Us</a>
+          <a routerLink="contact" routerLinkActive="router-active" style="margin-right: 32px; margin-left: 24px;" class="nav_links">Contact us</a>
+          <a class="sign-in-button" routerLink="/admin/login">Sign In</a>
+          <a (click)="scrollToElement()" class="btn_sub_header">Subscribe</a>
+        </div>
+        <div class="mobile-nav_block">
+          <label>
+            <img class="header-mobile-menu" src="assets/Images/icons/header-mobile-menu.png" alt="this icon mobile menu">
+            <input id="chackbox" class="mobile_menu_checkbox" type="checkbox">
+            <div class="mobile_menu">
+              <a
+                routerLink="/"
+                [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="router-active-mobile"
+                class="nav_links-mobile"
+              >
+                <mat-icon style="margin-right: 10px">home</mat-icon>
+                Home
+              </a>
+              <a
+                routerLink="blog"
+                routerLinkActive="router-active-mobile"
+                class="nav_links-mobile"
+              >
+                <mat-icon style="margin-right: 10px">event_list</mat-icon>
+                Blog
+              </a>
+              <a
+                routerLink="about-us"
+                routerLinkActive="router-active-mobile"
+                class="nav_links-mobile"
+              >
+                <mat-icon style="margin-right: 10px">group</mat-icon>
+                About Us
+              </a>
+              <a
+                routerLink="contact"
+                routerLinkActive="router-active-mobile"
+                class="nav_links-mobile"
+              >
+                <mat-icon style="margin-right: 10px">construction</mat-icon>
+                Contact us
+              </a>
+              <a (click)="scrollToElement()" class="btn_sub_header-mobile">Subscribe</a>
+              <a class="sign-in-button-mobile"  routerLink="/admin/login">
+                Sign In
+                <mat-icon>login</mat-icon>
+              </a>
+            </div>
+          </label>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

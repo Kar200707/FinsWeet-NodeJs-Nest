@@ -1,0 +1,81 @@
+<div *ngIf="isNotPage" class="business_block">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  <span>Blog > {{ title }}</span>
+</div>
+<div class="informations_block_categories_page">
+  <div class="container">
+    <div *ngIf="!isNotPage" class="not-page">
+      <h2>This category does not exist or not contection</h2>
+      <a href="/">back Home</a>
+    </div>
+    <div *ngIf="isNotPage" class="infromations_block">
+      <app-loader-bar
+        *ngIf="dataPosts == undefined"
+        style="display: block; width: 100%; margin-top: 32px; padding-right: 20px"
+        [Height]="'312px'"
+      ></app-loader-bar>
+      <app-loader-bar
+        *ngIf="dataPosts == undefined"
+        style="display: block; width: 100%; margin-top: 32px; padding-right: 20px"
+        [Height]="'312px'"
+      ></app-loader-bar>
+      <app-loader-bar
+        *ngIf="dataPosts == undefined"
+        style="display: block; width: 100%; margin-top: 32px; padding-right: 20px"
+        [Height]="'312px'"
+      ></app-loader-bar>
+      <app-loader-bar
+        *ngIf="dataPosts == undefined"
+        style="display: block; width: 100%; margin-top: 32px; padding-right: 20px"
+        [Height]="'312px'"
+      ></app-loader-bar>
+      <div *ngFor="let data of dataPosts, let i = index">
+        <app-posts [isPrevPage]="'category'" [dataPosts]="data"></app-posts>
+      </div>
+    </div>
+    <div class="categories_block">
+      <h2>Category</h2>
+      <div
+        *ngFor="let item of dataCategory, let i = index"
+        (click)="chooseCategory(item.title, i)"
+        style="margin-top: 40px;"
+        [style.background-color]="isSelectCategory[i]?.isSelect ? '#FFD050': 'white'"
+        class="category">
+        <div class="category_icon">
+          <img [src]="item.image" class="category-image" alt="this is icon">
+        </div>
+        <h3>{{ item.title }}</h3>
+      </div>
+      <div class="all_tags_block">
+        <h2>All Tags</h2>
+        <div class="tags_box">
+          <div style="margin-top: 24px;">
+            <div class="business">
+              <p>Business</p>
+            </div>
+            <div class="experience">
+              <p>Experience</p>
+            </div>
+          </div>
+          <div>
+            <div class="screen">
+              <p>Screen</p>
+            </div>
+            <div class="technology">
+              <p>Technology</p>
+            </div>
+          </div>
+          <div>
+            <div class="marketing">
+              <p>Marketing</p>
+            </div>
+            <div class="life">
+              <p>Life</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
