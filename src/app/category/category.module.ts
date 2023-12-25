@@ -9,7 +9,7 @@ import { Category, CategorySchema } from "./schemas/category.schema";
   controllers: [CategoryController],
   imports: [
     MongooseModule.forFeature([
-      {name: Category.name, schema: CategorySchema}
+      { name: Category.name, schema: CategorySchema }
     ])
   ]
 })

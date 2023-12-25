@@ -7,6 +7,13 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { config } from "./config/config";
 import { MongooseModule } from "@nestjs/mongoose";
 import { CategoryModule } from "./app/category/category.module";
+import { AuthModule } from "./app/auth/auth.module";
+import { PostModule } from "./app/post/post.module";
+import { UserModule } from "./app/user/user.module";
+import { SubscribeModule } from "./app/subscribe/subscribe.module";
+import { PrivacyPolicesModule } from "./app/privacy-polices/privacy-polices.module";
+import { LogosModule } from "./app/logos/logos.module";
+import { ContactUsModule } from "./app/contact-us/contact-us.module";
 
 @Module({
   imports: [
@@ -21,7 +28,14 @@ import { CategoryModule } from "./app/category/category.module";
 
     // api modules
 
-    CategoryModule
+    AuthModule,
+    CategoryModule,
+    PostModule,
+    UserModule,
+    SubscribeModule,
+    PrivacyPolicesModule,
+    LogosModule,
+    ContactUsModule
   ],
   controllers: [AppController],
   providers: [AppService],

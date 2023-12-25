@@ -1,4 +1,4 @@
-export const host = 'http://localhost:8080/api/';
+export const host = 'http://localhost:3000/api/';
 export const environment = {
   category: {
     get: host + 'category'
