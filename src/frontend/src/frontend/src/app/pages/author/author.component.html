@@ -1,0 +1,45 @@
+<strong class="not-page" *ngIf="!isNotPage">There is no user registered with this id</strong>
+<div *ngIf="isNotPage" class="user_block_author_page">
+  <div class="container_author">
+    <div class="user_info_block">
+      <img
+        [src]="authorImage"
+        alt="this is image"
+        #img
+        (error)="img.src = './assets/Images/not_user.jpg'"
+      >
+      <div class="user_info_text_block">
+        <h1>{{ authorTitle }}</h1>
+        <p>{{ authorBio }}</p>
+        <div class="site_icons">
+          <a [href]="authorFaceBook">
+            <img src="assets/Images/icons/facebook.png" alt="this is icon facebook">
+          </a>
+          <a [href]="authorTwitter">
+            <img src="assets/Images/icons/twitter.png" alt="this is icon twitter">
+          </a>
+          <a [href]="authorInsta">
+            <img src="assets/Images/icons/instagram.png" alt="this is icon instagram">
+          </a>
+          <a [href]="authorLinkedin">
+            <img src="assets/Images/icons/linkedin.png" alt="this is icon linkedin">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="yellow_and_violet_blocks_block">
+      <div class="yellow_block"></div>
+      <div class="violet_block"></div>
+    </div>
+  </div>
+</div>
+<div class="my_posts_block_author">
+  <div class="container_author">
+    <h2>My Posts</h2>
+    <app-loader-bar style="width: 100%; margin-top: 30px; display: block" [Height]="'320px'" *ngIf="dataPosts === undefined"></app-loader-bar>
+    <app-loader-bar style="width: 100%; margin-top: 30px; display: block" [Height]="'320px'" *ngIf="dataPosts === undefined"></app-loader-bar>
+    <div *ngFor="let data of dataPosts">
+      <app-posts isPrevPage="author" [dataPosts]="data"></app-posts>
+    </div>
+  </div>
+</div>
