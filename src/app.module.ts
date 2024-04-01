@@ -40,4 +40,4 @@ import { ContactUsModule } from "./app/contact-us/contact-us.module";
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
